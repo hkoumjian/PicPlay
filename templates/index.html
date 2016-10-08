@@ -1,0 +1,59 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalized.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+
+        <!-- <link rel="stylesheet" href="css/main.css"> -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">
+                  <span class="glyphicon glyphicon-camera" aria-hidden="true" id="pic_play_logo"></span>PicPlay
+              </a>
+            </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="col-xs-12 col-xs-offset-0 col-sm-offset-3 col-sm-6">
+                <!-- <form method="POST" enctype=multipart/form-data action="{{ url_for('upload') }}">
+                    <label id="find_playlist_btn" class="btn btn-primary btn-block btn-lg btn-file">
+                        Find Playlists <input id="file" ivalue="image_file" onclick="proceed();" type="file" style="display: none;">
+                    </label>
+                </form> -->
+                <form action='' method="POST" enctype="multipart/form-data">
+                    <p><input type='file' name='file[]' multiple=''>
+                    <input type='submit'>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

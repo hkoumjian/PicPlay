@@ -11,12 +11,14 @@
         <!-- Place favicon.ico in the root directory -->
 
         <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/normalized.css') }}" />
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
 
         <!-- <link rel="stylesheet" href="css/main.css"> -->
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -26,11 +28,11 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
               <a class="navbar-brand" href="#">
-                  <span class="glyphicon glyphicon-camera" aria-hidden="true" id="pic_play_logo"></span>PicPlay
+                  PicPlay
               </a>
             </div>
             </div>
@@ -38,11 +40,6 @@
 
         <div class="container">
             <div class="col-xs-12 col-xs-offset-0 col-sm-offset-3 col-sm-6">
-                <!-- <form method="POST" enctype=multipart/form-data action="{{ url_for('upload') }}">
-                    <label id="find_playlist_btn" class="btn btn-primary btn-block btn-lg btn-file">
-                        Find Playlists <input id="file" ivalue="image_file" onclick="proceed();" type="file" style="display: none;">
-                    </label>
-                </form> -->
                 <form action='' method="POST" enctype="multipart/form-data">
                     <p><input type='file' name='file[]' multiple=''>
                     <input type='submit'>

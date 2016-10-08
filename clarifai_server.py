@@ -10,7 +10,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def get_keywords_for_image(img_url):
     """ Gets the keyword associated with the image through the Clarifai API """
-    clarifai_api = ClarifaiApi() # assumes environment variables are set.
+    clarifai_api = ClarifaiApi("_O7oVw0TVQ2SC7l3Bwkb_UJ95LAzE8amEMQp0VGr", "hAhcV7cMgFmXDq-91Bvbk-V5FEaL1dTfTxtVtRzz") # assumes environment variables are set.
     result = clarifai_api.tag_images(open(img_url, "rb"))
     return result['results'][0]['result']['tag']['classes']
 
@@ -20,9 +20,9 @@ def index():
 
 @app.route('/list_playlists')
 def show_playlists():
-    keywords = get_keywords_for_image("clarifai_test_images/sea-dawn.jpg")
+    keywords = get_keywords_for_image("clarifai_test_images/college_party.jpg")
     playlists = get_playlist(keywords)
     return render_template("list_playlist.html", playlists=playlists)
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug = True, threaded=True)
